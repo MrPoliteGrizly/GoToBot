@@ -17,7 +17,7 @@ def repeat_all_messages(message):
         bot.send_message(message.chat.id, message.text)
 
 
-server.run(host="0.0.0.0", port=os.environ.get('PORT', 5000))
+# server.run(host="0.0.0.0", port=os.environ.get('PORT', 5000))
 
 if __name__ == '__main__':
     print(bot.get_me())
