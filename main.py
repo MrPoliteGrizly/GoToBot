@@ -7,8 +7,8 @@ bot = telebot.TeleBot(config.tocken)
 
 @bot.message_handler(content_types=["text"])
 def repeat_all_messages(message):
-    if message.text == 'Я крутой поц?':
-        bot.send_message(message.chat.id, 'Ну да че!')
+    if message.text == u'Я крутой поц?':
+        bot.send_message(message.chat.id, u'Ну да че!')
     else:
         bot.send_message(message.chat.id, message.text)
 
