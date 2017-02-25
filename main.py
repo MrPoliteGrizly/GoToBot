@@ -13,4 +13,5 @@ def repeat_all_messages(message):
 
 
 if __name__ == '__main__':
+    print(bot.get_me())
     bot.polling(none_stop=True)
