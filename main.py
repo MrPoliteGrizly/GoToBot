@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*- 
 import telebot
 
 import config
@@ -6,8 +7,8 @@ bot = telebot.TeleBot(config.tocken)
 
 @bot.message_handler(content_types=["text"])
 def repeat_all_messages(message):
-    if message.text == 'Am I cool guy?':
-        bot.send_message(message.chat.id, 'Yes!')
+    if message.text == 'Я крутой поц?':
+        bot.send_message(message.chat.id, 'Ну да че!')
     else:
         bot.send_message(message.chat.id, message.text)
 
