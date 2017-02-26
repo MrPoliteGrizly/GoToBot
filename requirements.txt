@@ -2,3 +2,4 @@ pyTelegramBotAPI==2.3.0
 requests==2.7.0
 telebot==0.0.3
 flask==0.12
+psycopg2==2.6.2

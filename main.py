@@ -4,10 +4,13 @@ import telebot
 import os
 from flask import Flask, request
 
+import psycopg2
+import urlparse
+
 import config
 
 bot = telebot.TeleBot(config.tocken)
-server = Flask(__name__)
+# server = Flask(__name__)
 
 @bot.message_handler(content_types=["text"])
 def repeat_all_messages(message):
@@ -18,6 +21,18 @@ def repeat_all_messages(message):
 
 
 # server.run(host="0.0.0.0", port=os.environ.get('PORT', 5000))
+
+
+urlparse.uses_netloc.append("postgres")
+url = urlparse.urlparse(os.environ["https://data.heroku.com/datastore/87a8abf1-4781-4b61-8ddd-621ae181d885"])
+
+conn = psycopg2.connect(
+    database=url.path[1:],
+    user=url.username,
+    password=url.password,
+    host=url.hostname,
+    port=url.port
+)
 
 if __name__ == '__main__':
     print(bot.get_me())
