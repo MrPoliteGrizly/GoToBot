@@ -24,7 +24,7 @@ def repeat_all_messages(message):
 
 
 urlparse.uses_netloc.append("postgres")
-url = urlparse.urlparse(os.environ["https://data.heroku.com/datastore/87a8abf1-4781-4b61-8ddd-621ae181d885"])
+url = urlparse.urlparse(os.environ["DATABASE_URL"])
 
 conn = psycopg2.connect(
     database=url.path[1:],
